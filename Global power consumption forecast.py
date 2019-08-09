@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # Global power prediction 
-
-# In[1]:
-
 
 import pandas as pd
 import numpy as np
@@ -365,36 +358,4 @@ fig.show()
 print(mean_absolute_error(actual,yhat_sequence))
 print(math.sqrt(mean_squared_error(actual,yhat_sequence)))
 
-
-# Which feature is your model most sensitive to?
-# 
-# The data is most sensitive to featurs like : Global_intensity, Sub_metering_1, Sub_metering_3 as they showed very high correlation in heat map
-
-# Why XGBoost?
-# 
-# XGBoost is a widely used and really popular tool, as it has been battle tested for production on large-scale problems. It is a highly flexible and versatile tool that can work through most regression, classification and ranking problems as well as user-built objective functions. As an open-source software, it is easily accessible and it may be used through different platforms and interfaces. 
-# The implementation of XGBoost offers several advanced features for model tuning, computing environments and algorithm enhancement. It is capable of performing the three main forms of gradient boosting (Gradient Boosting (GB), Stochastic GB and Regularized GB) and it is robust enough to support fine tuning and addition of regularization parameters.
-
-# Features:
-# 
-# Irrelevant or partially relevant features can negatively impact model performance.
-# We have to Reduce Overfitting ,Improve Accuracy.
-#    
-
-# I am not able to tune the hyperparameters for xgboost because of lack of time. But it can help to improve the results to a much acceptable extent
-
-# How would you determine if your model needs more features or more data?
-#                    
-# If explained variance is less , we will have to collect or transform features to get derived features which eventually explains over target variable. We can perform iterations by adding data if it improves our result .
-# 
-
-# How would you enable your model to make predictions daily using constantly updated data?
-# 
-# We can prepare the data in Pyspark or sql on a daily frequency and induce into our model for prediction for next 7 days. The daily updated data can be given for testin in xgboost and prediction can be made for that. The data given in test_X matrix is data of only one day which is used to make future predictions.
-
-# What sort of tools would you use to deploy your model in a production environment?
-# 
-# Once the model appears to be performing satisfactorily, it can deployed into production. We can use pyspark instead of pandas in production because it can handle huge data and is faster than pandas. Also , there can be two ways of implementing it in production, one is to use this model directly in the frontend and the other one is to use API to call this model in backend and provide the predictions at frontend.
-# 
-# 
-# 
+ 
